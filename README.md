@@ -30,8 +30,6 @@ These instructions will get you a copy of the project up and running on your loc
    ```
 look below
 
-I understand you're looking for a more intermediate level implementation of a login/signup system using React and Ruby on Rails. Let's break this down into two parts: the backend (Ruby on Rails) and the frontend (React).
-
 **Backend (Ruby on Rails)**
 
 First, let's set up a new Rails API application. Open your terminal and run:

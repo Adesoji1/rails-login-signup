@@ -1,5 +1,4 @@
 
-```markdown
 # Ruby on Rails Login/Signup Backend
 
 This repository contains the backend code for a login/signup form implemented using Ruby on Rails.
@@ -43,7 +42,7 @@ This will create a new Rails API application with PostgreSQL as the database. Th
 
 Next, add the following gems to your Gemfile:
 
-```ruby
+```bash
 gem 'devise'
 gem 'devise-jwt'
 gem 'rack-cors'
@@ -60,7 +59,7 @@ rails generate devise User
 
 This will generate a User model with Devise modules. Open the generated model file and make sure it includes `:validatable` and `:registerable`:
 
-```ruby
+```bash
 class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
@@ -75,7 +74,7 @@ rails db:create db:migrate
 
 Now, let's set up `devise-jwt`. In `config/initializers/devise.rb`, add:
 
-```ruby
+```bash
 config.jwt do |jwt|
   jwt.secret = ENV['DEVISE_JWT_SECRET_KEY']
   jwt.dispatch_requests = [['POST', %r{^/login$}]]
@@ -87,7 +86,7 @@ This will set up JWT to be dispatched on login and revoked on logout.
 
 Next, set up CORS. In `config/initializers/cors.rb`, add:
 
-```ruby
+```bash
 Rails.application.config.middleware.insert_before 0, Rack::Cors do
   allow do
     origins '*'
@@ -124,14 +123,14 @@ Pull requests are welcome. For major changes, please open an issue first to disc
 ## License
 
 [MIT](https://choosealicense.com/licenses/mit/)
-```
 
 
-# Rails Authentication Backend
+
+### Rails Authentication Backend
 
 This repository contains a Rails backend application that handles user authentication, including login and signup functionalities.
 
-## Project Structure
+### Project Structure
 
 The project follows the standard Rails application structure and includes the following key components:
 
@@ -193,4 +192,4 @@ To use the application, navigate to `/signup` to create a new account, and `/log
 
 Contributions are welcome. Please feel free to open a pull request or branch from this project.
 
-## 
+
